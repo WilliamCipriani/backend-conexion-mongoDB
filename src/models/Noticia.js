@@ -6,7 +6,8 @@ const contenidoSchema = new mongoose.Schema({
     text: String,
     items: [String],
     src: String,
-    alt: String
+    alt: String,
+    
 }, { _id : false });
 
 // Esquema principal para las noticias
@@ -20,9 +21,16 @@ const noticiasSchema = new mongoose.Schema({
     area: String,
     dateCreated: Date,
     summary: String,
-    content: [contenidoSchema]
+    content: [contenidoSchema],
+
+    // Agregar el campo isApproved aquí
+    isApproved: {
+        type: Boolean,
+        default: false
+    }
+
 });
 
-const Noticia = mongoose.model('Noticia', noticiasSchema);
+const Noticia = mongoose.model('Noticia', noticiasSchema)
 
-module.exports = Noticia;
+module.exports = Noticia

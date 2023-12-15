@@ -10,8 +10,8 @@ app.use(cors());
 
 app.use(express.json())
 
-app.use('/api', noticiasRoutes)
-app.use('/api',articulosRoutes)
+app.use('/api/', noticiasRoutes)
+app.use('/api/',articulosRoutes)
 app.use('/api/',rinconGourmetsRoutes)
 
 
